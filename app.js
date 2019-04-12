@@ -6,11 +6,7 @@ const buildcsv = require("./buildcsv");
 const checkApiConnectin = async() => {
     try{
         const checkConnection = await connection.CheckConnection();
-        if(checkConnection){
-            console.log("Connection to API exists!")
-        } else {
-            new Error("Not connected to API! ")
-        }
+        console.log("Connection to API exists!")
         const csv = await buildcsv.BuildCSVWearther()
         console.log("File builded!")
         return
