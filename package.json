@@ -1,0 +1,27 @@
+{
+  "name": "weathertask",
+  "version": "1.0.0",
+  "description": "test bank liumi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chupaca/weathertask.git"
+  },
+  "keywords": [
+    "openweathermap.org"
+  ],
+  "author": "Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chupaca/weathertask/issues"
+  },
+  "homepage": "https://github.com/Chupaca/weathertask#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "moment": "^2.24.0",
+    "request": "^2.60.0"
+  }
+}
