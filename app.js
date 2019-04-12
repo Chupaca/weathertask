@@ -8,9 +8,12 @@ const checkApiConnectin = async() => {
         const checkConnection = await connection.CheckConnection();
         if(checkConnection){
             console.log("Connection to API exists!")
+        } else {
+            new Error("Not connected to API! ")
         }
         const csv = await buildcsv.BuildCSVWearther()
         console.log("File builded!")
+        return
     }catch(err){
         console.error(err)
         console.log("File not builded!")

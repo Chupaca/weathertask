@@ -20,7 +20,7 @@ const CitiesList = {
 const BuildCSVWearther = async () => {
     let dataToCSV = {}
     for await (let cityDays of Object.keys(CitiesList).map(cityId => GetWeatherBy5Days(cityId))) {
-        dataToCSV = buildFinalCSV(dataToCSV, cityDays)
+        dataToCSV = sortAndBuildFinalData(dataToCSV, cityDays)
     }
     return await buildFile(dataToCSV)
 }
@@ -52,7 +52,7 @@ function getRainExists(oldStep, newStep) {
     return oldStep && oldStep.Rain ? true : newStep == "Rain" ? true : false
 }
 
-function buildFinalCSV(dataToCSV, cityDays) {
+function sortAndBuildFinalData(dataToCSV, cityDays) {
     Object.entries(cityDays).forEach(([day, data]) => {
         if (!dataToCSV[day]) {
             dataToCSV[day] = { MaxTemp: { temp: data.Temp, city: data.City }, MinTemp: { temp: data.Temp, city: data.City }, Rain: [] }
